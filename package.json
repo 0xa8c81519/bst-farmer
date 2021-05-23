@@ -1,0 +1,24 @@
+{
+  "name": "bst-farmer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xa8c81519/bst-farmer.git"
+  },
+  "author": "0xa8c81519",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0xa8c81519/bst-farmer/issues"
+  },
+  "homepage": "https://github.com/0xa8c81519/bst-farmer#readme",
+  "dependencies": {
+    "bignumber.js": "^9.0.1",
+    "ethers": "^5.2.0",
+    "log4js": "^6.3.0"
+  }
+}

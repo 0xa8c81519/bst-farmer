@@ -1,0 +1,10 @@
+node index.js bsc_testnet distributeBUSD 1 10000
+node index.js bsc_testnet distributeBUSD 2 10000
+node index.js bsc_testnet distributeBUSD 3 10000
+node index.js bsc_testnet distributeBUSD 4 10000
+node index.js bsc_testnet distributeBUSD 5 10000
+node index.js bsc_testnet distributeBUSD 6 10000
+node index.js bsc_testnet distributeBUSD 7 10000
+node index.js bsc_testnet distributeBUSD 8 10000
+node index.js bsc_testnet distributeBUSD 9 10000
+node index.js bsc_testnet distributeBUSD 10 10000
