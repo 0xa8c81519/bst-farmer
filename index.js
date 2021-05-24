@@ -6,6 +6,7 @@ const log4js = require('log4js');
 const config = require('./conf/conf.js');
 const PaymentFarmingProxyABIJson = require('./abis/PaymentFarmingProxy.json');
 const LiqudityFarmingProxyABIJson = require('./abis/LiquidityFarmingProxy.json');
+const BStablePoolABIJson = require('./abis/BStablePool.json');
 const BEP20ABIJson = require('./abis/BEP20.json');
 // const apiModule = require('./api.js');
 
@@ -28,20 +29,54 @@ for (let i = 0; i < config.default.accountsSize; i++) {
 
 // let api = apiModule.init(log4js, config.default);
 
-// const paymentFarmingProxyContract = new ethers.Contract(config.default[network].payment.address, PaymentFarmingProxyABIJson.abi, wallets[0]);
-// const liquidityFarmingProxyContract = new ethers.Contract(config.default[network].payment.address, PaymentFarmingProxyABIJson.abi, wallets[0]);
-// const usdcContract=new ethers.Contract(config.default[network].usdc,BEP20ABIJson.abi,wallet[0]);
+const usdcContract = new ethers.Contract(config.default[network].usdc, BEP20ABIJson.abi, provider);
+const busdContract = new ethers.Contract(config.default[network].busd, BEP20ABIJson.abi, provider);
+const usdtContract = new ethers.Contract(config.default[network].usdt, BEP20ABIJson.abi, provider);
+const paymentContract = new ethers.Contract(config.default[network].payment.address, PaymentFarmingProxyABIJson.abi, provider);
+const liquidityContract = new ethers.Contract(config.default[network].liquidity.address, LiqudityFarmingProxyABIJson.abi, provider);
 
-
-let init = () => {
-    let payEvent = paymentFarmingProxyContract.filters.Pay(null, null, null, null);
-    paymentFarmingProxyContract.on(payEvent, (payToken, receiptToken, payer, receipt) => {
-
+let paymentFarming = async () => {
+    let payEvent = paymentContract.filters.Pay(null, null, null, null);
+    paymentContract.on(payEvent, (payToken, receiptToken, payer, receipt) => {
+        logger.info('Get a payment:');
+        logger.info('payToken: ' + payToken);
+        logger.info('receiptToken: ' + receiptToken);
+        logger.info('payer: ' + payer);
+        logger.info('receipt: ' + receipt);
+        logger.info('==============================');
     });
-};
-
-let payFarming = () => {
-
+    for (; true;) {
+        let delayMS = Math.floor(Math.random() * 10 * 1000);
+        //     setTimeout(() => {
+        //     }, delayMS);
+        await delay(delayMS);
+        let wltIndex = Math.floor(Math.random() * 10);
+        let recIndex = Math.floor(Math.random() * 10);
+        let coiIndex = Math.floor(Math.random() * 3);
+        let wallet = wallets[wltIndex];
+        let coins = new Array();
+        coins.push(usdcContract);
+        coins.push(busdContract);
+        coins.push(usdtContract);
+        let randomAmtPercent = Math.floor(Math.random() * 100);
+        let balance = await coins[coiIndex].balanceOf(wallet.address);
+        let amt = balance.mul(randomAmtPercent).div(100);
+        await coins[coiIndex].connect(wallet).approve(paymentContract.address, amt);
+        await delay(5000);
+        try {
+            await paymentContract.connect(wallet).pay(coins[coiIndex].address, wallets[recIndex].address, amt);
+        } catch (e) {
+            logger.error(e);
+        }
+        logger.info('Payment done!');
+        await delay(5000);
+        try {
+            await paymentContract.connect(wallet).withdrawReward();
+        } catch (e) {
+            logger.error(e);
+        }
+        logger.info('Withdraw Payment Rward!');
+    }
 };
 
 let listAccounts = () => {
@@ -52,9 +87,6 @@ let listAccounts = () => {
 }
 
 let listAccountsBalance = () => {
-    let usdcContract = new ethers.Contract(config.default[network].usdc, BEP20ABIJson.abi, provider);
-    let busdContract = new ethers.Contract(config.default[network].busd, BEP20ABIJson.abi, provider);
-    let usdtContract = new ethers.Contract(config.default[network].usdt, BEP20ABIJson.abi, provider);
     let arr = new Array();
     wallets.forEach(wallet => {
         let pArr = new Array();
@@ -62,6 +94,14 @@ let listAccountsBalance = () => {
         pArr.push(busdContract.balanceOf(wallet.address));
         pArr.push(usdtContract.balanceOf(wallet.address));
         pArr.push(wallet.getBalance());
+        pArr.push(paymentContract.pool().then(pool => {
+            let poolContract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
+            return poolContract.balanceOf(wallet.address);
+        }));
+        pArr.push(paymentContract.token().then(bst => {
+            let bstContract = new ethers.Contract(bst, BEP20ABIJson.abi, provider);
+            return bstContract.balanceOf(wallet.address);
+        }));
         arr.push(Promise.all(pArr));
     });
     Promise.all(arr).then(res => {
@@ -71,28 +111,37 @@ let listAccountsBalance = () => {
             logger.info("BUSD: " + ethers.utils.formatEther(e[1]));
             logger.info("USDT: " + ethers.utils.formatEther(e[2]));
             logger.info("BNB: " + ethers.utils.formatEther(e[3]));
-            logger.info("=============================================");
+            logger.info("BSPL-03: " + ethers.utils.formatEther(e[4]));
+            logger.info("BST: " + ethers.utils.formatEther(e[5]));
+            logger.info("==============================");
         });
     });
 };
 
 let getBalance = (index) => {
     let wallet = wallets[index];
-    let usdcContract = new ethers.Contract(config.default[network].usdc, BEP20ABIJson.abi, provider);
-    let busdContract = new ethers.Contract(config.default[network].busd, BEP20ABIJson.abi, provider);
-    let usdtContract = new ethers.Contract(config.default[network].usdt, BEP20ABIJson.abi, provider);
     let pArr = new Array();
     pArr.push(usdcContract.balanceOf(wallet.address));
     pArr.push(busdContract.balanceOf(wallet.address));
     pArr.push(usdtContract.balanceOf(wallet.address));
     pArr.push(wallet.getBalance());
+    pArr.push(paymentContract.pool().then(pool => {
+        let poolContract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
+        return poolContract.balanceOf(wallet.address);
+    }));
+    pArr.push(paymentContract.token().then(bst => {
+        let bstContract = new ethers.Contract(bst, BEP20ABIJson.abi, provider);
+        return bstContract.balanceOf(wallet.address);
+    }));
     Promise.all(pArr).then(res => {
         logger.info("Balance of [" + index + "]: " + wallet.address);
         logger.info("USDC: " + ethers.utils.formatEther(res[0]));
         logger.info("BUSD: " + ethers.utils.formatEther(res[1]));
         logger.info("USDT: " + ethers.utils.formatEther(res[2]));
         logger.info("BNB: " + ethers.utils.formatEther(res[3]));
-        logger.info("=============================================");
+        logger.info("BSPL-03: " + ethers.utils.formatEther(res[4]));
+        logger.info("BST: " + ethers.utils.formatEther(res[5]));
+        logger.info("==============================");
     });
 };
 
@@ -128,7 +177,6 @@ let collectBNB = () => {
 
 let distributeToken = (index, amtPerAcc, tokenAddress) => {
     let wallet = wallets[0];
-    let usdcContract = new ethers.Contract(tokenAddress, BEP20ABIJson.abi, provider);
     let amt = ethers.utils.parseEther(amtPerAcc);
     usdcContract.connect(wallet).transfer(wallets[index].address, amt).then(() => {
         // getBalance(index);
@@ -141,7 +189,6 @@ let distributeToken = (index, amtPerAcc, tokenAddress) => {
 let collectToken = (tokenAddress) => {
     let wallet = wallets[0];
     let pArr = new Array();
-    let usdcContract = new ethers.Contract(tokenAddress, BEP20ABIJson.abi, provider);
     for (let i = 0; i < wallets.length; i++) {
         pArr.push(usdcContract.balanceOf(wallets[i].address));
     }
@@ -159,9 +206,35 @@ let collectToken = (tokenAddress) => {
     })
 };
 
+let addPool3InitLiquidity = (amts) => {
+    let wallet = wallets[0];
+    paymentContract.pool().then(pool => {
+        let poolContract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
+        let _amts = new Array();
+        let approveArr = new Array();
+        amts.forEach((e, i) => {
+            let amt = ethers.utils.parseEther(e);
+            _amts.push(amt);
+        });
+        usdcContract.connect(wallet).approve(poolContract.address, _amts[0]).then(r => {
+            return busdContract.connect(wallet).approve(poolContract.address, _amts[1]);
+        }).then(r => {
+            return usdtContract.connect(wallet).approve(poolContract.address, _amts[2]);
+        }).then(r => {
+            return poolContract.connect(wallet).add_liquidity(_amts, 0).then();
+        });
+    });
+};
+
 let funName = process.argv[3];
 switch (funName) {
-    case 'addPool3InitLiquidity':
+    case 'addLiquidity':
+        logger.info('BST Farmer - addLiquidity:');
+        let arr = new Array();
+        arr.push(process.argv[4]);
+        arr.push(process.argv[5]);
+        arr.push(process.argv[6]);
+        addPool3InitLiquidity(arr);
         break;
     case 'listAccounts':
         logger.info('BST Farmer - listAccounts:');
@@ -209,9 +282,15 @@ switch (funName) {
         break;
     case 'collectBST':
         logger.info('BST Farmer - collectBST:');
-        collectToken(config.default[network].bst);
+        paymentContract.token().then(bst => {
+            return collectToken(bst);
+        });
+        break;
+    case 'paymentFarming':
+        logger.info('BST Farmer - Payment Farming');
+        paymentFarming();
         break;
     default: {
-        init();
+        logger.info('BST Farmer - starting');
     }
 }
