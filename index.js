@@ -35,49 +35,7 @@ const usdtContract = new ethers.Contract(config.default[network].usdt, BEP20ABIJ
 const paymentContract = new ethers.Contract(config.default[network].payment.address, PaymentFarmingProxyABIJson.abi, provider);
 const liquidityContract = new ethers.Contract(config.default[network].liquidity.address, LiqudityFarmingProxyABIJson.abi, provider);
 
-let paymentFarming = async () => {
-    let payEvent = paymentContract.filters.Pay(null, null, null, null);
-    paymentContract.on(payEvent, (payToken, receiptToken, payer, receipt) => {
-        logger.info('Get a payment:');
-        logger.info('payToken: ' + payToken);
-        logger.info('receiptToken: ' + receiptToken);
-        logger.info('payer: ' + payer);
-        logger.info('receipt: ' + receipt);
-        logger.info('==============================');
-    });
-    for (; true;) {
-        let delayMS = Math.floor(Math.random() * 10 * 1000);
-        //     setTimeout(() => {
-        //     }, delayMS);
-        await delay(delayMS);
-        let wltIndex = Math.floor(Math.random() * 10);
-        let recIndex = Math.floor(Math.random() * 10);
-        let coiIndex = Math.floor(Math.random() * 3);
-        let wallet = wallets[wltIndex];
-        let coins = new Array();
-        coins.push(usdcContract);
-        coins.push(busdContract);
-        coins.push(usdtContract);
-        let randomAmtPercent = Math.floor(Math.random() * 100);
-        let balance = await coins[coiIndex].balanceOf(wallet.address);
-        let amt = balance.mul(randomAmtPercent).div(100);
-        await coins[coiIndex].connect(wallet).approve(paymentContract.address, amt);
-        await delay(5000);
-        try {
-            await paymentContract.connect(wallet).pay(coins[coiIndex].address, wallets[recIndex].address, amt);
-        } catch (e) {
-            logger.error(e);
-        }
-        logger.info('Payment done!');
-        await delay(5000);
-        try {
-            await paymentContract.connect(wallet).withdrawReward();
-        } catch (e) {
-            logger.error(e);
-        }
-        logger.info('Withdraw Payment Rward!');
-    }
-};
+
 
 let listAccounts = () => {
     logger.info('Accounts: ');
@@ -211,7 +169,6 @@ let addPool3InitLiquidity = (amts) => {
     paymentContract.pool().then(pool => {
         let poolContract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
         let _amts = new Array();
-        let approveArr = new Array();
         amts.forEach((e, i) => {
             let amt = ethers.utils.parseEther(e);
             _amts.push(amt);
@@ -224,6 +181,117 @@ let addPool3InitLiquidity = (amts) => {
             return poolContract.connect(wallet).add_liquidity(_amts, 0).then();
         });
     });
+};
+
+let paymentFarming = async () => {
+    let payEvent = paymentContract.filters.Pay(null, null, null, null);
+    paymentContract.on(payEvent, (payToken, receiptToken, payer, receipt) => {
+        logger.info('Get a payment:');
+        logger.info('payToken: ' + payToken);
+        logger.info('receiptToken: ' + receiptToken);
+        logger.info('payer: ' + payer);
+        logger.info('receipt: ' + receipt);
+        logger.info('==============================');
+    });
+    for (; true;) {
+        let delayMS = Math.floor(Math.random() * 10 * 1000);
+        await delay(delayMS);
+        let wltIndex = Math.floor(Math.random() * config.default.accountsSize);
+        let recIndex = Math.floor(Math.random() * config.default.accountsSize);
+        let coiIndex = Math.floor(Math.random() * 3);
+        let wallet = wallets[wltIndex];
+        let coins = new Array();
+        coins.push(usdcContract);
+        coins.push(busdContract);
+        coins.push(usdtContract);
+        let randomAmtPercent = Math.floor(Math.random() * 100);
+        try {
+            let balance = await coins[coiIndex].balanceOf(wallet.address);
+            let amt = balance.mul(randomAmtPercent).div(100);
+            await coins[coiIndex].connect(wallet).approve(paymentContract.address, amt);
+            await delay(5000);
+            await paymentContract.connect(wallet).pay(coins[coiIndex].address, wallets[recIndex].address, amt);
+            logger.info('Payment done!');
+            await delay(5000);
+            await paymentContract.connect(wallet).withdrawReward();
+        } catch (e) {
+            logger.error(e);
+        }
+        logger.info('Withdraw Payment Rward!');
+    }
+};
+
+let liquidityFarming = async () => {
+    let pool = await paymentContract.pool();
+    let poolContract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
+    let addLiquidityEvent = poolContract.filters.AddLiquidity(null, null, null, null, null);
+    poolContract.on(addLiquidityEvent, (provider, token_amounts, fees, invariant, token_supply) => {
+        logger.info('Get a AddLiquditidy Event: ');
+        logger.info('token_amounts: ' + JSON.stringify(token_amounts));
+        logger.info('fees: ' + JSON.stringify(fees));
+        logger.info('invariant: ' + invariant);
+        logger.info('token_supply: ' + token_supply);
+        logger.info('==============================');
+    });
+    let withdrawEvent = liquidityContract.filters.Withdraw(null, null, null);
+    liquidityContract.on(withdrawEvent, (user, pid, amount) => {
+        logger.info('Get a Withdraw Event: ');
+        logger.info('user: ' + user);
+        logger.info('pid: ' + pid);
+        logger.info('amount: ' + amount);
+        logger.info('==============================');
+    });
+    let depositEvent = liquidityContract.filters.Deposit(null, null, null);
+    liquidityContract.on(depositEvent, (user, pid, amount) => {
+        logger.info('Get a Deposit Event: ');
+        logger.info('user: ' + user);
+        logger.info('pid: ' + pid);
+        logger.info('amount: ' + amount);
+        logger.info('==============================');
+    });
+    for (; true;) {
+        let delayMS = Math.floor(Math.random() * 10 * 1000);
+        await delay(delayMS);
+        let wltIndex = Math.floor(Math.random() * config.default.accountsSize);
+        let wallet = wallets[wltIndex];
+        try {
+            let pendingBST = await liquidityContract.pendingReward(2, wallet.address);
+            let lpBalance = await poolContract.balanceOf(wallet.address);
+            if (pendingBST.lte(0) && lpBalance.lte(0)) {
+                // add liquidity
+                let usdcBal = await usdcContract.balanceOf(wallet.address);
+                let busdBal = await busdContract.balanceOf(wallet.address);
+                let usdtBal = await usdtContract.balanceOf(wallet.address);
+                let randPercent = Math.floor(Math.random() * 100);
+                let amts = new Array();
+                amts.push(usdcBal.mul(randPercent).div(100));
+                amts.push(busdBal.mul(randPercent).div(100));
+                amts.push(usdtBal.mul(randPercent).div(100));
+                await usdcContract.connect(wallet).approve(pool, amts[0]);
+                await delay(3000);
+                await busdContract.connect(wallet).approve(pool, amts[1]);
+                await delay(3000);
+                await usdtContract.connect(wallet).approve(pool, amts[2]);
+                await delay(3000);
+                await poolContract.connect(wallet).add_liquidity(amts, 0);
+                logger.info('Add liquidity!');
+            }
+            if (pendingBST.gt(0)) {
+                // withdraw reward 
+                await liquidityContract.connect(wallet).withdraw(2, 0);
+                logger.info('Withdraw reward!');
+            }
+            if (lpBalance.gt(0)) {
+                // deposit lp
+                await poolContract.connect(wallet).approve(liquidityContract.address, lpBalance);
+                await delay(3000);
+                await liquidityContract.connect(wallet).deposit(2, lpBalance);
+                logger.info('Deposit LP!');
+            }
+        } catch (e) {
+            logger.error(e);
+        }
+    }
 };
 
 let funName = process.argv[3];
@@ -289,6 +357,10 @@ switch (funName) {
     case 'paymentFarming':
         logger.info('BST Farmer - Payment Farming');
         paymentFarming();
+        break;
+    case 'liquidityFarming':
+        logger.info('BST Farmer - Liquidity Farming');
+        liquidityFarming();
         break;
     default: {
         logger.info('BST Farmer - starting');
