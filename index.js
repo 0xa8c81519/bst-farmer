@@ -167,23 +167,28 @@ let collectToken = (tokenAddress) => {
     })
 };
 
-let addPool3InitLiquidity = (amts) => {
+let addPool3InitLiquidity = async (amts) => {
     let wallet = wallets[0];
-    paymentContract.pool().then(pool => {
-        let poolContract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
-        let _amts = new Array();
-        amts.forEach((e, i) => {
-            let amt = ethers.utils.parseEther(e);
-            _amts.push(amt);
-        });
-        usdcContract.connect(wallet).approve(poolContract.address, _amts[0]).then(r => {
-            return busdContract.connect(wallet).approve(poolContract.address, _amts[1]);
-        }).then(r => {
-            return usdtContract.connect(wallet).approve(poolContract.address, _amts[2]);
-        }).then(r => {
-            return poolContract.connect(wallet).add_liquidity(_amts, 0).then();
-        });
+    let pool = await paymentContract.pool();
+    let poolContract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
+    let _amts = new Array();
+    amts.forEach((e, i) => {
+        let amt = ethers.utils.parseEther(e);
+        _amts.push(amt);
     });
+    let allowanceUsdc = await usdcContract.allowance(wallet.address, pool);
+    let allowanceBusd = await busdContract.allowance(wallet.address, pool);
+    let allowanceUsdt = await usdtContract.allowance(wallet.address, pool);
+    if (allowanceUsdc.lt(_amts[0])) {
+        await usdcContract.connect(wallet).approve(pool, _amts[0]);
+    }
+    if (allowanceBusd.lt(_amts[1])) {
+        await busdContract.connect(wallet).approve(pool, _amts[1]);
+    }
+    if (allowanceUsdt.lt(_amts[2])) {
+        await usdtContract.connect(wallet).approve(pool, _amts[2]);
+    }
+    await poolContract.connect(wallet).add_liquidity(_amts, 0);
 };
 
 let paymentFarming = async () => {
