@@ -483,6 +483,11 @@ switch (funName) {
         logger.info('BST Farmer - Interval Farming');
         intervalFarming(process.argv[4] * 1000);
         break;
+    case 'getBlockTimestamp':
+        logger.info('BST Farmer - Block Timestamp');
+        provider.getBlock().then(block => {
+            logger.info("Block timestap: " + block.timestamp);
+        });
     default: {
         logger.info('BST Farmer - starting');
     }
