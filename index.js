@@ -8,6 +8,7 @@ const PaymentFarmingProxyABIJson = require('./abis/PaymentFarmingProxy.json');
 const LiqudityFarmingProxyABIJson = require('./abis/LiquidityFarmingProxy.json');
 const BStablePoolABIJson = require('./abis/BStablePool.json');
 const BEP20ABIJson = require('./abis/BEP20.json');
+const BSTMinterABIJson = require('./abis/BSTMinter.json');
 // const apiModule = require('./api.js');
 
 log4js.configure(config.log4jsConfig);
@@ -405,8 +406,16 @@ let intervalFarming = async (delayMs) => {
     };
     let task = async () => {
         let wallet = wallets[0];
-        await liquidityFarming(wallet);
-        await paymenntFarming(wallet);
+        let minter = await paymentContract.bstMinter();
+        let minterContract = new ethers.Contract(minter, BSTMinterABIJson.abi, provider);
+        let startBlock = await minterContract.startBlock();
+        let block = await provider.getBlock();
+        if (block.number > startBlock) {
+            await liquidityFarming(wallet);
+            await paymenntFarming(wallet);
+        } else {
+            logger.info('Farming not start yet.');
+        }
     };
     setInterval(task, delayMs);
 };
