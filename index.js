@@ -145,27 +145,23 @@ let distributeToken = (index, amtPerAcc, tokenAddress) => {
     });
 };
 
-let collectToken = (tokenAddress) => {
+let collectToken = async (tokenAddress) => {
     let wallet = wallets[0];
     let pArr = new Array();
     let tokenContract = new ethers.Contract(tokenAddress, BEP20ABIJson.abi, provider);
-    for (let i = 0; i < wallets.length; i++) {
-        pArr.push(tokenContract.balanceOf(wallets[i].address));
+    for (let i = 1; i < wallets.length; i++) {
+        pArr.push(await tokenContract.balanceOf(wallets[i].address));
     }
-    Promise.all(pArr).then(async res => {
-        for (let i = 0; i < wallets.length; i++) {
-            if (i > 0) {
-                try {
-                    await tokenContract.connect(wallets[i]).transfer(wallet.address, res[i]);
-                } catch (e) {
-                    logger.error("Collect Token error at: " + i);
-                    logger.error(e);
-                }
+    for (let i = 0; i < pArr.length; i++) {
+        if (pArr[i].gt(0)) {
+            try {
+                await tokenContract.connect(wallets[i + 1]).transfer(wallet.address, pArr[i]);
+            } catch (e) {
+                logger.error("Collect Token error at: " + i);
+                logger.error(e);
             }
         }
-    }).catch(e => {
-        logger.error(e);
-    })
+    }
 };
 
 let addPool3InitLiquidity = async (amts) => {
