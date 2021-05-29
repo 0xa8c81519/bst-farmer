@@ -348,14 +348,17 @@ let intervalFarming = async (delayMs) => {
         coins.push(usdtContract);
         let randomAmtPercent = Math.floor(Math.random() * 100);
         try {
+            let userInfo = await paymentContract.userInfo(wallet.address);
+            if (userInfo.quandity.gt(0)) {
+                await paymentContract.connect(wallet).withdrawReward();
+                logger.info('Withdraw payment reward.');
+            }
             let balance = await coins[coiIndex].balanceOf(wallet.address);
             let amt = balance.mul(randomAmtPercent).div(100);
             await coins[coiIndex].connect(wallet).approve(paymentContract.address, amt);
             await delay(5000);
             await paymentContract.connect(wallet).pay(coins[coiIndex].address, wallets[recIndex].address, amt);
             logger.info('Payment done!');
-            await delay(5000);
-            await paymentContract.connect(wallet).withdrawReward();
         } catch (e) {
             logger.error(e);
         }
