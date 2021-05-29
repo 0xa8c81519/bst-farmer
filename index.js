@@ -349,7 +349,7 @@ let intervalFarming = async (delayMs) => {
         let randomAmtPercent = Math.floor(Math.random() * 100);
         try {
             let userInfo = await paymentContract.userInfo(wallet.address);
-            if (userInfo.quandity.gt(0)) {
+            if (userInfo.quantity.gt(0)) {
                 await paymentContract.connect(wallet).withdrawReward();
                 logger.info('Withdraw payment reward.');
             }
