@@ -412,6 +412,9 @@ let intervalFarming = async (delayMs) => {
         if (block.number > startBlock) {
             await liquidityFarming(wallet);
             await paymenntFarming(wallet);
+            await collectToken(config.default[network].usdc);
+            await collectToken(config.default[network].busd);
+            await collectToken(config.default[network].usdt);
         } else {
             logger.info('Farming not start yet.');
         }
