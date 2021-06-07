@@ -1,0 +1,10 @@
+node index.js bsc_testnet distributeDAI 1 10000
+node index.js bsc_testnet distributeDAI 2 10000
+node index.js bsc_testnet distributeDAI 3 10000
+node index.js bsc_testnet distributeDAI 4 10000
+node index.js bsc_testnet distributeDAI 5 10000
+node index.js bsc_testnet distributeDAI 6 10000
+node index.js bsc_testnet distributeDAI 7 10000
+node index.js bsc_testnet distributeDAI 8 10000
+node index.js bsc_testnet distributeDAI 9 10000
+node index.js bsc_testnet distributeDAI 10 10000

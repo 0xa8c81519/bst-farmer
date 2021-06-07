@@ -30,6 +30,7 @@ for (let i = 0; i < config.default.accountsSize; i++) {
 
 // let api = apiModule.init(log4js, config.default);
 
+const daiContract = new ethers.Contract(config.default[network].dai, BEP20ABIJson.abi, provider);
 const usdcContract = new ethers.Contract(config.default[network].usdc, BEP20ABIJson.abi, provider);
 const busdContract = new ethers.Contract(config.default[network].busd, BEP20ABIJson.abi, provider);
 const usdtContract = new ethers.Contract(config.default[network].usdt, BEP20ABIJson.abi, provider);
@@ -49,6 +50,7 @@ let listAccountsBalance = () => {
     let arr = new Array();
     wallets.forEach(wallet => {
         let pArr = new Array();
+        pArr.push(daiContract.balanceOf(wallet.address));
         pArr.push(usdcContract.balanceOf(wallet.address));
         pArr.push(busdContract.balanceOf(wallet.address));
         pArr.push(usdtContract.balanceOf(wallet.address));
@@ -61,17 +63,23 @@ let listAccountsBalance = () => {
             let bstContract = new ethers.Contract(bst, BEP20ABIJson.abi, provider);
             return bstContract.balanceOf(wallet.address);
         }));
+        pArr.push(liquidityContract.poolInfo(0).then(res => {
+            let pool1Contract = new ethers.Contract(res.lpToken, BStablePoolABIJson.abi, provider);
+            return pool1Contract.balanceOf(wallet.address);
+        }));
         arr.push(Promise.all(pArr));
     });
     Promise.all(arr).then(res => {
         res.forEach((e, index) => {
             logger.info("Balance of [" + index + "]: " + wallets[index].address);
-            logger.info("USDC: " + ethers.utils.formatEther(e[0]));
-            logger.info("BUSD: " + ethers.utils.formatEther(e[1]));
-            logger.info("USDT: " + ethers.utils.formatEther(e[2]));
-            logger.info("BNB: " + ethers.utils.formatEther(e[3]));
-            logger.info("BSPL-03: " + ethers.utils.formatEther(e[4]));
-            logger.info("BST: " + ethers.utils.formatEther(e[5]));
+            logger.info("DAI: " + ethers.utils.formatEther(e[0]));
+            logger.info("USDC: " + ethers.utils.formatEther(e[1]));
+            logger.info("BUSD: " + ethers.utils.formatEther(e[2]));
+            logger.info("USDT: " + ethers.utils.formatEther(e[3]));
+            logger.info("BNB: " + ethers.utils.formatEther(e[4]));
+            logger.info("BSPL-03: " + ethers.utils.formatEther(e[5]));
+            logger.info("BST: " + ethers.utils.formatEther(e[6]));
+            logger.info("BSLP-01: " + ethers.utils.formatEther(e[7]));
             logger.info("==============================");
         });
     });
@@ -313,9 +321,11 @@ let intervalFarming = async (delayMs) => {
         logger.info('==============================');
     });
     let pool = await paymentContract.pool();
-    let poolContract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
-    let addLiquidityEvent = poolContract.filters.AddLiquidity(null, null, null, null, null);
-    poolContract.on(addLiquidityEvent, (provider, token_amounts, fees, invariant, token_supply) => {
+    let pool2Contract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
+    let poolInfo = await liquidityContract.poolInfo(0);
+    let pool1Contract = new ethers.Contract(poolInfo.lpToken, BStablePoolABIJson.abi, provider);
+    let addLiquidityEvent = pool2Contract.filters.AddLiquidity(null, null, null, null, null);
+    pool2Contract.on(addLiquidityEvent, (provider, token_amounts, fees, invariant, token_supply) => {
         logger.info('Get a AddLiquditidy Event: ');
         logger.info('token_amounts: ' + JSON.stringify(token_amounts));
         logger.info('fees: ' + JSON.stringify(fees));
@@ -360,14 +370,15 @@ let intervalFarming = async (delayMs) => {
             await paymentContract.connect(wallet).pay(coins[coiIndex].address, wallets[recIndex].address, amt);
             logger.info('Payment done!');
         } catch (e) {
+            logger.error('paymenntFarming:');
             logger.error(e);
         }
         logger.info('Withdraw Payment Rward!');
     };
-    let liquidityFarming = async wallet => {
+    let liquidityFarmingPool2 = async wallet => {
         try {
-            let pendingBST = await liquidityContract.pendingReward(2, wallet.address);
-            let lpBalance = await poolContract.balanceOf(wallet.address);
+            let pendingBST = await liquidityContract.pendingReward(1, wallet.address);
+            let lpBalance = await pool2Contract.balanceOf(wallet.address);
             if (pendingBST.lte(0) && lpBalance.lte(0)) {
                 // add liquidity
                 let usdcBal = await usdcContract.balanceOf(wallet.address);
@@ -378,28 +389,69 @@ let intervalFarming = async (delayMs) => {
                 amts.push(usdcBal.mul(randPercent).div(100));
                 amts.push(busdBal.mul(randPercent).div(100));
                 amts.push(usdtBal.mul(randPercent).div(100));
-                await usdcContract.connect(wallet).approve(pool, amts[0]);
-                await delay(3000);
-                await busdContract.connect(wallet).approve(pool, amts[1]);
-                await delay(3000);
-                await usdtContract.connect(wallet).approve(pool, amts[2]);
-                await delay(3000);
-                await poolContract.connect(wallet).add_liquidity(amts, 0);
-                logger.info('Add liquidity!');
+                await usdcContract.connect(wallet).approve(pool2Contract.address, amts[0]);
+                await delay(5000);
+                await busdContract.connect(wallet).approve(pool2Contract.address, amts[1]);
+                await delay(5000);
+                await usdtContract.connect(wallet).approve(pool2Contract.address, amts[2]);
+                await delay(5000);
+                await pool2Contract.connect(wallet).add_liquidity(amts, 0);
+                logger.info('LiquidityFarming2: Add liquidity!');
             }
             if (pendingBST.gt(0)) {
                 // withdraw reward 
-                await liquidityContract.connect(wallet).withdraw(2, 0);
-                logger.info('Withdraw reward!');
+                await liquidityContract.connect(wallet).withdraw(1, 0);
+                logger.info('LiquidityFarming2: Withdraw reward!');
             }
             if (lpBalance.gt(0)) {
                 // deposit lp
-                await poolContract.connect(wallet).approve(liquidityContract.address, lpBalance);
-                await delay(3000);
-                await liquidityContract.connect(wallet).deposit(2, lpBalance);
-                logger.info('Deposit LP!');
+                await pool2Contract.connect(wallet).approve(liquidityContract.address, lpBalance);
+                await delay(5000);
+                await liquidityContract.connect(wallet).deposit(1, lpBalance);
+                logger.info('LiquidityFarming2: Deposit LP!');
             }
         } catch (e) {
+            logger.error('LiquidityFarming2 :');
+            logger.error(e);
+        }
+    };
+    let liquidityFarmingPool1 = async wallet => {
+        try {
+            let pendingBST = await liquidityContract.pendingReward(0, wallet.address);
+            let lpBalance = await pool1Contract.balanceOf(wallet.address);
+            if (pendingBST.lte(0) && lpBalance.lte(0)) {
+                // add liquidity
+                let daiBal = await daiContract.balanceOf(wallet.address);
+                let busdBal = await busdContract.balanceOf(wallet.address);
+                let usdtBal = await usdtContract.balanceOf(wallet.address);
+                let randPercent = Math.floor(Math.random() * 100);
+                let amts = new Array();
+                amts.push(daiBal.mul(randPercent).div(100));
+                amts.push(busdBal.mul(randPercent).div(100));
+                amts.push(usdtBal.mul(randPercent).div(100));
+                await daiContract.connect(wallet).approve(pool1Contract.address, amts[0]);
+                await delay(5000);
+                await busdContract.connect(wallet).approve(pool1Contract.address, amts[1]);
+                await delay(5000);
+                await usdtContract.connect(wallet).approve(pool1Contract.address, amts[2]);
+                await delay(5000);
+                await pool1Contract.connect(wallet).add_liquidity(amts, 0);
+                logger.info('LiquidityFarming1: Add liquidity!');
+            }
+            if (pendingBST.gt(0)) {
+                // withdraw reward 
+                await liquidityContract.connect(wallet).withdraw(0, 0);
+                logger.info('LiquidityFarming1: Withdraw reward!');
+            }
+            if (lpBalance.gt(0)) {
+                // deposit lp
+                await pool1Contract.connect(wallet).approve(liquidityContract.address, lpBalance);
+                await delay(5000);
+                await liquidityContract.connect(wallet).deposit(0, lpBalance);
+                logger.info('LiquidityFarming1: Deposit LP!');
+            }
+        } catch (e) {
+            logger.error('LiquidityFarming2: ');
             logger.error(e);
         }
     };
@@ -410,7 +462,8 @@ let intervalFarming = async (delayMs) => {
         let startBlock = await minterContract.startBlock();
         let block = await provider.getBlock();
         if (block.number > startBlock) {
-            await liquidityFarming(wallet);
+            await liquidityFarmingPool1(wallet);
+            await liquidityFarmingPool2(wallet);
             await paymenntFarming(wallet);
             await collectToken(config.default[network].usdc);
             await collectToken(config.default[network].busd);
@@ -451,6 +504,14 @@ switch (funName) {
     case 'collectBNB':
         logger.info('BST Farmer - collectBNB:');
         collectBNB();
+        break;
+    case 'distributeDAI':
+        logger.info('BST Farmer - distributeDAI:');
+        distributeToken(process.argv[4], process.argv[5], config.default[network].dai);
+        break;
+    case 'collectDAI':
+        logger.info('BST Farmer - collectDAI:');
+        collectToken(config.default[network].dai);
         break;
     case 'distributeUSDC':
         logger.info('BST Farmer - distributeUSDC:');
