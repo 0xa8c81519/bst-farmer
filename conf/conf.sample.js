@@ -27,6 +27,7 @@ const config = {
         liquidity: {
             address: '0x931B226EBb7134a19B970cBF74f18E40a4239178',
         },
+        dai: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
         usdc: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
         busd: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
         usdt: '0x55d398326f99059ff775485246999027b3197955',
@@ -37,11 +38,12 @@ const config = {
             url: 'https://data-seed-prebsc-2-s2.binance.org:8545/',
         },
         payment: {
-            address: '0x6b44BB401BC9c6EE36843b7bac2062937d5425a2',
+            address: '0xDb37BfCF7f90Da30eDF8D5b2C727a7d5b705ed78',
         },
         liquidity: {
-            address: '0x44A08ff464CCAEf948c7973EBa066777Df0143Ce',
+            address: '0xCcEDA287905Ec3F8fCab683894663D08be74FA00',
         },
+        dai: '0xb86fCC4e6189BD298dD606d174266cA938606D09',
         usdc: '0x45374DB08D851B9Fc254d9BF0e67E1607876a7E7',
         busd: '0xa2157E2Ca201a157776494Cbd02723A121359794',
         usdt: '0xD94905fc832754Ea85bCa67C6Ab5FAa66066E12C',
