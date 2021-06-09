@@ -475,6 +475,39 @@ let intervalFarming = async (delayMs) => {
     setInterval(task, delayMs);
 };
 
+let listenEvents = async () => {
+    let minter = await paymentContract.bstMinter();
+    let minterContract = new ethers.Contract(minter, BSTMinterABIJson.abi, provider);
+    minterContract.on('MintBST', (proxy, pool, lastRewardBlock, blokcNumber, amount) => {
+        logger.info('=====================');
+        logger.info('BSTMinter MintBST:\t');
+        logger.info('Proxy:\t' + proxy);
+        logger.info('Pool:\t' + pool);
+        logger.info('LastRewardBlock:\t' + lastRewardBlock);
+        logger.info('Block Number:\t' + blokcNumber);
+        logger.info('Amount:\t' + ethers.utils.formatEther(amount));
+        logger.info('=====================');
+    });
+    liquidityContract.on('CalculatePending', (_pid, userAmount, userRewardDebt, poolAccTokenPerShare, pending) => {
+        logger.info('=====================');
+        logger.info('Liquiidty Farming CalculatePending:');
+        logger.info('pid:\t' + _pid);
+        logger.info('userAmount:\t' + ethers.utils.formatEther(userAmount));
+        logger.info('userRewardDebt:\t' + ethers.utils.formatEther(userRewardDebt));
+        logger.info('poolAccTokenPerShare:\t' + ethers.utils.formatEther(poolAccTokenPerShare.mul('1000000')));
+        logger.info('pending:\t' + ethers.utils.formatEther(pending));
+        logger.info('=====================');
+    });
+    paymentContract.on('WithdrawReward', (quantity, totalQuantity, userReward) => {
+        logger.info('=====================');
+        logger.info('Payment Farming Withdraw Rward:');
+        logger.info('quantity:\t' + ethers.utils.formatEther(quantity));
+        logger.info('totalQuantity:\t' + ethers.utils.formatEther(totalQuantity));
+        logger.info('userRward:\t' + ethers.utils.formatEther(userReward));
+        logger.info('=====================');
+    });
+};
+
 let funName = process.argv[3];
 switch (funName) {
     case 'addLiquidity':
@@ -562,5 +595,6 @@ switch (funName) {
         });
     default: {
         logger.info('BST Farmer - starting');
+        listenEvents();
     }
 }

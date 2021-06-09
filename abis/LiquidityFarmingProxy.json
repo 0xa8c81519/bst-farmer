@@ -51,6 +51,12 @@
           "internalType": "uint256",
           "name": "accTokenPerShare",
           "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "pending",
+          "type": "uint256"
         }
       ],
       "name": "CalculatePending",
