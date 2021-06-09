@@ -1,0 +1,700 @@
+$ node index.js bsc_testnet 
+Debugger listening on ws://127.0.0.1:58789/22b2d758-cd8a-4734-8e75-232471243691
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+[2021-06-09T12:38:35.768] [INFO] BST Farmer - BST Farmer - starting
+[2021-06-09T12:41:15.114] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:15.117] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:41:15.117] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:41:15.119] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:41:15.120] [INFO] BST Farmer - userRewardDebt:   2137.849999181233059734
+[2021-06-09T12:41:15.120] [INFO] BST Farmer - poolAccTokenPerShare:     0.046696507964
+[2021-06-09T12:41:15.120] [INFO] BST Farmer - pending:  104.649999977383358659
+[2021-06-09T12:41:15.121] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:15.122] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:15.122] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:41:15.122] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:41:15.123] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:41:15.123] [INFO] BST Farmer - LastRewardBlock:  9571965
+[2021-06-09T12:41:15.123] [INFO] BST Farmer - Block Number:     9572126
+[2021-06-09T12:41:15.123] [INFO] BST Farmer - Amount:   104.65
+[2021-06-09T12:41:15.123] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:23.193] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:23.194] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:41:23.194] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:41:23.195] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:41:23.195] [INFO] BST Farmer - userRewardDebt:   8548.799998807345785885
+[2021-06-09T12:41:23.196] [INFO] BST Farmer - poolAccTokenPerShare:     0.237062577783
+[2021-06-09T12:41:23.196] [INFO] BST Farmer - pending:  421.19999997293070969
+[2021-06-09T12:41:23.197] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:23.200] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:23.201] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:41:23.201] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:41:23.201] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:41:23.201] [INFO] BST Farmer - LastRewardBlock:  9571968
+[2021-06-09T12:41:23.201] [INFO] BST Farmer - Block Number:     9572130
+[2021-06-09T12:41:23.202] [INFO] BST Farmer - Amount:   421.2
+[2021-06-09T12:41:23.202] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:30.972] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:30.973] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:41:30.973] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:41:30.973] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:41:30.973] [INFO] BST Farmer - LastRewardBlock:  9571977
+[2021-06-09T12:41:30.973] [INFO] BST Farmer - Block Number:     9572133
+[2021-06-09T12:41:30.974] [INFO] BST Farmer - Amount:   507.0
+[2021-06-09T12:41:30.974] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:30.978] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:30.979] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:41:30.979] [INFO] BST Farmer - quantity: 12312.064612842025099774
+[2021-06-09T12:41:30.980] [INFO] BST Farmer - totalQuantity:    12312.064612842025099774
+[2021-06-09T12:41:30.981] [INFO] BST Farmer - userRward:        526.5
+[2021-06-09T12:41:30.981] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:52.190] [INFO] BST Farmer - =====================
+[2021-06-09T12:41:52.190] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:41:52.190] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:41:52.190] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:41:52.190] [INFO] BST Farmer - LastRewardBlock:  9572133
+[2021-06-09T12:41:52.191] [INFO] BST Farmer - Block Number:     9572140
+[2021-06-09T12:41:52.191] [INFO] BST Farmer - Amount:   22.75
+[2021-06-09T12:41:52.191] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:07.228] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:07.229] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:43:07.229] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:43:07.230] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:43:07.230] [INFO] BST Farmer - userRewardDebt:   2242.499999158616418393
+[2021-06-09T12:43:07.231] [INFO] BST Farmer - poolAccTokenPerShare:     0.047224381532
+[2021-06-09T12:43:07.232] [INFO] BST Farmer - pending:  25.349999976624715618
+[2021-06-09T12:43:07.232] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:07.233] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:07.233] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:43:07.234] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:43:07.235] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:43:07.235] [INFO] BST Farmer - LastRewardBlock:  9572126
+[2021-06-09T12:43:07.235] [INFO] BST Farmer - Block Number:     9572165
+[2021-06-09T12:43:07.235] [INFO] BST Farmer - Amount:   25.35
+[2021-06-09T12:43:07.235] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:24.235] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:24.236] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:43:24.237] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:43:24.237] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:43:24.238] [INFO] BST Farmer - userRewardDebt:   8969.999998780276495575
+[2021-06-09T12:43:24.238] [INFO] BST Farmer - poolAccTokenPerShare:     0.239811129409
+[2021-06-09T12:43:24.238] [INFO] BST Farmer - pending:  103.999999968090817656
+[2021-06-09T12:43:24.239] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:24.279] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:24.280] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:43:24.280] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:43:24.281] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:43:24.281] [INFO] BST Farmer - LastRewardBlock:  9572130
+[2021-06-09T12:43:24.281] [INFO] BST Farmer - Block Number:     9572170
+[2021-06-09T12:43:24.281] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:43:24.282] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:27.245] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:27.246] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:43:27.246] [INFO] BST Farmer - quantity: 13465.194566825278182289
+[2021-06-09T12:43:27.247] [INFO] BST Farmer - totalQuantity:    13465.194566825278182289
+[2021-06-09T12:43:27.247] [INFO] BST Farmer - userRward:        123.5
+[2021-06-09T12:43:27.247] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:27.248] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:27.248] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:43:27.248] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:43:27.248] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:43:27.248] [INFO] BST Farmer - LastRewardBlock:  9572140
+[2021-06-09T12:43:27.249] [INFO] BST Farmer - Block Number:     9572171
+[2021-06-09T12:43:27.249] [INFO] BST Farmer - Amount:   100.75
+[2021-06-09T12:43:27.249] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:45.115] [INFO] BST Farmer - =====================
+[2021-06-09T12:43:45.116] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:43:45.116] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:43:45.116] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:43:45.116] [INFO] BST Farmer - LastRewardBlock:  9572171
+[2021-06-09T12:43:45.117] [INFO] BST Farmer - Block Number:     9572178
+[2021-06-09T12:43:45.117] [INFO] BST Farmer - Amount:   22.75
+[2021-06-09T12:43:45.117] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:12.291] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:12.291] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:45:12.292] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:45:12.292] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:45:12.292] [INFO] BST Farmer - LastRewardBlock:  9572165
+[2021-06-09T12:45:12.292] [INFO] BST Farmer - Block Number:     9572206
+[2021-06-09T12:45:12.292] [INFO] BST Farmer - Amount:   26.65
+[2021-06-09T12:45:12.292] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:12.293] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:12.293] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:45:12.293] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:45:12.294] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:45:12.294] [INFO] BST Farmer - userRewardDebt:   2267.849999135241134011
+[2021-06-09T12:45:12.294] [INFO] BST Farmer - poolAccTokenPerShare:     0.047779325539
+[2021-06-09T12:45:12.295] [INFO] BST Farmer - pending:  26.649999956955651208
+[2021-06-09T12:45:12.295] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:23.405] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:23.405] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:45:23.405] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:45:23.405] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:45:23.405] [INFO] BST Farmer - LastRewardBlock:  9572170
+[2021-06-09T12:45:23.406] [INFO] BST Farmer - Block Number:     9572210
+[2021-06-09T12:45:23.406] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:45:23.406] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:23.407] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:23.407] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:45:23.408] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:45:23.408] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:45:23.409] [INFO] BST Farmer - userRewardDebt:   9073.999998748367313231
+[2021-06-09T12:45:23.409] [INFO] BST Farmer - poolAccTokenPerShare:     0.242559681035
+[2021-06-09T12:45:23.410] [INFO] BST Farmer - pending:  103.999999968090817656
+[2021-06-09T12:45:23.410] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:27.195] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:27.196] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:45:27.196] [INFO] BST Farmer - quantity: 28.667532131833985462
+[2021-06-09T12:45:27.197] [INFO] BST Farmer - totalQuantity:    28.667532131833985462
+[2021-06-09T12:45:27.198] [INFO] BST Farmer - userRward:        133.25
+[2021-06-09T12:45:27.198] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:27.204] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:27.204] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:45:27.204] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:45:27.204] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:45:27.204] [INFO] BST Farmer - LastRewardBlock:  9572178
+[2021-06-09T12:45:27.205] [INFO] BST Farmer - Block Number:     9572212
+[2021-06-09T12:45:27.206] [INFO] BST Farmer - Amount:   110.5
+[2021-06-09T12:45:27.206] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:52.417] [INFO] BST Farmer - =====================
+[2021-06-09T12:45:52.417] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:45:52.417] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:45:52.418] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:45:52.418] [INFO] BST Farmer - LastRewardBlock:  9572212
+[2021-06-09T12:45:52.418] [INFO] BST Farmer - Block Number:     9572220
+[2021-06-09T12:45:52.418] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:45:52.419] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:15.483] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:15.484] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:47:15.484] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:47:15.486] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:47:15.487] [INFO] BST Farmer - userRewardDebt:   2294.499999092196785219
+[2021-06-09T12:47:15.487] [INFO] BST Farmer - poolAccTokenPerShare:     0.048320734327
+[2021-06-09T12:47:15.487] [INFO] BST Farmer - pending:  25.999999990801614855
+[2021-06-09T12:47:15.487] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:15.490] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:15.491] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:47:15.491] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:47:15.492] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:47:15.492] [INFO] BST Farmer - LastRewardBlock:  9572206
+[2021-06-09T12:47:15.492] [INFO] BST Farmer - Block Number:     9572246
+[2021-06-09T12:47:15.492] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:47:15.493] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:23.367] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:23.367] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:47:23.367] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:47:23.367] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:47:23.368] [INFO] BST Farmer - LastRewardBlock:  9572210
+[2021-06-09T12:47:23.368] [INFO] BST Farmer - Block Number:     9572250
+[2021-06-09T12:47:23.369] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:47:23.369] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:23.370] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:23.371] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:47:23.371] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:47:23.372] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:47:23.372] [INFO] BST Farmer - userRewardDebt:   9177.999998716458130887
+[2021-06-09T12:47:23.372] [INFO] BST Farmer - poolAccTokenPerShare:     0.245308232661
+[2021-06-09T12:47:23.374] [INFO] BST Farmer - pending:  103.999999968090817657
+[2021-06-09T12:47:23.375] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:27.254] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:27.255] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:47:27.255] [INFO] BST Farmer - quantity: 76.771364373730094728
+[2021-06-09T12:47:27.256] [INFO] BST Farmer - totalQuantity:    76.771364373730094728
+[2021-06-09T12:47:27.256] [INFO] BST Farmer - userRward:        130.0
+[2021-06-09T12:47:27.256] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:27.257] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:27.257] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:47:27.258] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:47:27.258] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:47:27.258] [INFO] BST Farmer - LastRewardBlock:  9572220
+[2021-06-09T12:47:27.258] [INFO] BST Farmer - Block Number:     9572252
+[2021-06-09T12:47:27.258] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:47:27.258] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:55.625] [INFO] BST Farmer - =====================
+[2021-06-09T12:47:55.626] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:47:55.626] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:47:55.626] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:47:55.626] [INFO] BST Farmer - LastRewardBlock:  9572252
+[2021-06-09T12:47:55.627] [INFO] BST Farmer - Block Number:     9572260
+[2021-06-09T12:47:55.627] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:47:55.627] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:11.402] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:11.403] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:49:11.403] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:49:11.403] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:49:11.403] [INFO] BST Farmer - LastRewardBlock:  9572246
+[2021-06-09T12:49:11.404] [INFO] BST Farmer - Block Number:     9572286
+[2021-06-09T12:49:11.405] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:49:11.405] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:11.406] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:11.406] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:49:11.406] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:49:11.407] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:49:11.407] [INFO] BST Farmer - userRewardDebt:   2320.499999082998400074
+[2021-06-09T12:49:11.407] [INFO] BST Farmer - poolAccTokenPerShare:     0.048862143115
+[2021-06-09T12:49:11.407] [INFO] BST Farmer - pending:  25.999999990801614856
+[2021-06-09T12:49:11.408] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:23.667] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:23.668] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:49:23.668] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:49:23.668] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:49:23.668] [INFO] BST Farmer - userRewardDebt:   9281.999998684548948544
+[2021-06-09T12:49:23.669] [INFO] BST Farmer - poolAccTokenPerShare:     0.248056784287
+[2021-06-09T12:49:23.669] [INFO] BST Farmer - pending:  103.999999968090817656
+[2021-06-09T12:49:23.669] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:23.670] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:23.670] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:49:23.670] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:49:23.670] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:49:23.670] [INFO] BST Farmer - LastRewardBlock:  9572250
+[2021-06-09T12:49:23.670] [INFO] BST Farmer - Block Number:     9572290
+[2021-06-09T12:49:23.671] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:49:23.671] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:27.722] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:27.723] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:49:27.723] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:49:27.724] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:49:27.724] [INFO] BST Farmer - LastRewardBlock:  9572260
+[2021-06-09T12:49:27.724] [INFO] BST Farmer - Block Number:     9572292
+[2021-06-09T12:49:27.725] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:49:27.725] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:27.730] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:27.731] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:49:27.732] [INFO] BST Farmer - quantity: 76.540665500608471563
+[2021-06-09T12:49:27.732] [INFO] BST Farmer - totalQuantity:    76.540665500608471563
+[2021-06-09T12:49:27.733] [INFO] BST Farmer - userRward:        130.0
+[2021-06-09T12:49:27.734] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:52.277] [INFO] BST Farmer - =====================
+[2021-06-09T12:49:52.277] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:49:52.277] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:49:52.277] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:49:52.278] [INFO] BST Farmer - LastRewardBlock:  9572292
+[2021-06-09T12:49:52.278] [INFO] BST Farmer - Block Number:     9572300
+[2021-06-09T12:49:52.279] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:49:52.279] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:12.968] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:12.969] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:51:12.969] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:51:12.969] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:51:12.969] [INFO] BST Farmer - LastRewardBlock:  9572286
+[2021-06-09T12:51:12.970] [INFO] BST Farmer - Block Number:     9572326
+[2021-06-09T12:51:12.970] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:51:12.970] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:12.974] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:12.974] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:51:12.974] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:51:12.975] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:51:12.975] [INFO] BST Farmer - userRewardDebt:   2346.49999907380001493
+[2021-06-09T12:51:12.975] [INFO] BST Farmer - poolAccTokenPerShare:     0.049403551903
+[2021-06-09T12:51:12.976] [INFO] BST Farmer - pending:  25.999999990801614855
+[2021-06-09T12:51:12.976] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:23.840] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:23.841] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:51:23.841] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:51:23.842] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:51:23.842] [INFO] BST Farmer - userRewardDebt:   9385.9999986526397662
+[2021-06-09T12:51:23.843] [INFO] BST Farmer - poolAccTokenPerShare:     0.250805335913
+[2021-06-09T12:51:23.843] [INFO] BST Farmer - pending:  103.999999968090817656
+[2021-06-09T12:51:23.843] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:24.831] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:24.832] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:51:24.832] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:51:24.832] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:51:24.832] [INFO] BST Farmer - LastRewardBlock:  9572290
+[2021-06-09T12:51:24.833] [INFO] BST Farmer - Block Number:     9572330
+[2021-06-09T12:51:24.833] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:51:24.833] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:31.493] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:31.494] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:51:31.494] [INFO] BST Farmer - quantity: 191.133522854844444764
+[2021-06-09T12:51:31.494] [INFO] BST Farmer - totalQuantity:    191.133522854844444764
+[2021-06-09T12:51:31.495] [INFO] BST Farmer - userRward:        133.25
+[2021-06-09T12:51:31.495] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:31.501] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:31.502] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:51:31.502] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:51:31.502] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:51:31.502] [INFO] BST Farmer - LastRewardBlock:  9572300
+[2021-06-09T12:51:31.503] [INFO] BST Farmer - Block Number:     9572333
+[2021-06-09T12:51:31.503] [INFO] BST Farmer - Amount:   107.25
+[2021-06-09T12:51:31.504] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:52.743] [INFO] BST Farmer - =====================
+[2021-06-09T12:51:52.744] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:51:52.744] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:51:52.744] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:51:52.744] [INFO] BST Farmer - LastRewardBlock:  9572333
+[2021-06-09T12:51:52.744] [INFO] BST Farmer - Block Number:     9572340
+[2021-06-09T12:51:52.744] [INFO] BST Farmer - Amount:   22.75
+[2021-06-09T12:51:52.744] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:11.878] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:11.879] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:53:11.879] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:53:11.879] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:53:11.879] [INFO] BST Farmer - userRewardDebt:   2372.499999064601629785
+[2021-06-09T12:53:11.881] [INFO] BST Farmer - poolAccTokenPerShare:     0.049944960691
+[2021-06-09T12:53:11.882] [INFO] BST Farmer - pending:  25.999999990801614855
+[2021-06-09T12:53:11.882] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:11.882] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:11.883] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:53:11.883] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:53:11.883] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:53:11.883] [INFO] BST Farmer - LastRewardBlock:  9572326
+[2021-06-09T12:53:11.883] [INFO] BST Farmer - Block Number:     9572366
+[2021-06-09T12:53:11.884] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:53:11.884] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:23.669] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:23.670] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:53:23.670] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:53:23.670] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:53:23.670] [INFO] BST Farmer - LastRewardBlock:  9572330
+[2021-06-09T12:53:23.670] [INFO] BST Farmer - Block Number:     9572370
+[2021-06-09T12:53:23.670] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:53:23.671] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:23.680] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:23.681] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:53:23.681] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:53:23.681] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:53:23.682] [INFO] BST Farmer - userRewardDebt:   9489.999998620730583856
+[2021-06-09T12:53:23.682] [INFO] BST Farmer - poolAccTokenPerShare:     0.253553887539
+[2021-06-09T12:53:23.683] [INFO] BST Farmer - pending:  103.999999968090817656
+[2021-06-09T12:53:23.684] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:27.952] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:27.953] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:53:27.953] [INFO] BST Farmer - quantity: 43.454448498371314851
+[2021-06-09T12:53:27.953] [INFO] BST Farmer - totalQuantity:    43.454448498371314851
+[2021-06-09T12:53:27.954] [INFO] BST Farmer - userRward:        126.75
+[2021-06-09T12:53:27.954] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:27.957] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:27.958] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:53:27.958] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:53:27.958] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:53:27.958] [INFO] BST Farmer - LastRewardBlock:  9572340
+[2021-06-09T12:53:27.958] [INFO] BST Farmer - Block Number:     9572372
+[2021-06-09T12:53:27.958] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:53:27.958] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:51.701] [INFO] BST Farmer - =====================
+[2021-06-09T12:53:51.703] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:53:51.703] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:53:51.703] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:53:51.703] [INFO] BST Farmer - LastRewardBlock:  9572372
+[2021-06-09T12:53:51.704] [INFO] BST Farmer - Block Number:     9572380
+[2021-06-09T12:53:51.704] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:53:51.704] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:12.913] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:12.913] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:55:12.913] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:55:12.914] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:55:12.915] [INFO] BST Farmer - userRewardDebt:   2398.49999905540324464
+[2021-06-09T12:55:12.915] [INFO] BST Farmer - poolAccTokenPerShare:     0.050486369479
+[2021-06-09T12:55:12.915] [INFO] BST Farmer - pending:  25.999999990801614856
+[2021-06-09T12:55:12.915] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:13.601] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:13.602] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:55:13.602] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:55:13.602] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:55:13.602] [INFO] BST Farmer - LastRewardBlock:  9572366
+[2021-06-09T12:55:13.602] [INFO] BST Farmer - Block Number:     9572406
+[2021-06-09T12:55:13.603] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:55:13.603] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:24.079] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:24.079] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:55:24.079] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:55:24.080] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:55:24.080] [INFO] BST Farmer - userRewardDebt:   9593.999998588821401512
+[2021-06-09T12:55:24.081] [INFO] BST Farmer - poolAccTokenPerShare:     0.256302439165
+[2021-06-09T12:55:24.081] [INFO] BST Farmer - pending:  103.999999968090817657
+[2021-06-09T12:55:24.081] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:24.084] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:24.084] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:55:24.084] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:55:24.084] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:55:24.085] [INFO] BST Farmer - LastRewardBlock:  9572370
+[2021-06-09T12:55:24.085] [INFO] BST Farmer - Block Number:     9572410
+[2021-06-09T12:55:24.085] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:55:24.085] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:27.730] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:27.731] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:55:27.731] [INFO] BST Farmer - quantity: 108.512276067707928881
+[2021-06-09T12:55:27.732] [INFO] BST Farmer - totalQuantity:    108.512276067707928881
+[2021-06-09T12:55:27.733] [INFO] BST Farmer - userRward:        130.0
+[2021-06-09T12:55:27.734] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:27.734] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:27.735] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:55:27.736] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:55:27.736] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:55:27.736] [INFO] BST Farmer - LastRewardBlock:  9572380
+[2021-06-09T12:55:27.736] [INFO] BST Farmer - Block Number:     9572412
+[2021-06-09T12:55:27.736] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:55:27.737] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:52.034] [INFO] BST Farmer - =====================
+[2021-06-09T12:55:52.035] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:55:52.035] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:55:52.036] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:55:52.036] [INFO] BST Farmer - LastRewardBlock:  9572412
+[2021-06-09T12:55:52.036] [INFO] BST Farmer - Block Number:     9572420
+[2021-06-09T12:55:52.036] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:55:52.036] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:13.509] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:13.510] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:57:13.510] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:57:13.510] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:57:13.510] [INFO] BST Farmer - LastRewardBlock:  9572406
+[2021-06-09T12:57:13.510] [INFO] BST Farmer - Block Number:     9572446
+[2021-06-09T12:57:13.511] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:57:13.512] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:13.513] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:13.513] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:57:13.513] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:57:13.514] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:57:13.514] [INFO] BST Farmer - userRewardDebt:   2424.499999046204859496
+[2021-06-09T12:57:13.515] [INFO] BST Farmer - poolAccTokenPerShare:     0.051027778267
+[2021-06-09T12:57:13.515] [INFO] BST Farmer - pending:  25.999999990801614855
+[2021-06-09T12:57:13.515] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:24.008] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:24.010] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:57:24.010] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:57:24.010] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:57:24.010] [INFO] BST Farmer - userRewardDebt:   9697.999998556912219169
+[2021-06-09T12:57:24.011] [INFO] BST Farmer - poolAccTokenPerShare:     0.259050990791
+[2021-06-09T12:57:24.011] [INFO] BST Farmer - pending:  103.999999968090817656
+[2021-06-09T12:57:24.011] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:24.012] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:24.012] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:57:24.012] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:57:24.012] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:57:24.013] [INFO] BST Farmer - LastRewardBlock:  9572410
+[2021-06-09T12:57:24.013] [INFO] BST Farmer - Block Number:     9572450
+[2021-06-09T12:57:24.013] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:57:24.013] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:29.899] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:29.900] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:57:29.900] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:57:29.900] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:57:29.900] [INFO] BST Farmer - LastRewardBlock:  9572420
+[2021-06-09T12:57:29.900] [INFO] BST Farmer - Block Number:     9572452
+[2021-06-09T12:57:29.901] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:57:29.901] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:29.907] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:29.908] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:57:29.908] [INFO] BST Farmer - quantity: 182.564001059352005966
+[2021-06-09T12:57:29.908] [INFO] BST Farmer - totalQuantity:    182.564001059352005966
+[2021-06-09T12:57:29.909] [INFO] BST Farmer - userRward:        130.0
+[2021-06-09T12:57:29.909] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:56.179] [INFO] BST Farmer - =====================
+[2021-06-09T12:57:56.181] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:57:56.181] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:57:56.181] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:57:56.182] [INFO] BST Farmer - LastRewardBlock:  9572452
+[2021-06-09T12:57:56.182] [INFO] BST Farmer - Block Number:     9572460
+[2021-06-09T12:57:56.182] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:57:56.183] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:12.336] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:12.336] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:59:12.337] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:59:12.337] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T12:59:12.337] [INFO] BST Farmer - LastRewardBlock:  9572446
+[2021-06-09T12:59:12.337] [INFO] BST Farmer - Block Number:     9572486
+[2021-06-09T12:59:12.338] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:59:12.338] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:13.048] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:13.049] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:59:13.049] [INFO] BST Farmer - pid:      0
+[2021-06-09T12:59:13.050] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T12:59:13.050] [INFO] BST Farmer - userRewardDebt:   2450.499999037006474351
+[2021-06-09T12:59:13.050] [INFO] BST Farmer - poolAccTokenPerShare:     0.051569187055
+[2021-06-09T12:59:13.051] [INFO] BST Farmer - pending:  25.999999990801614856
+[2021-06-09T12:59:13.051] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:24.490] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:24.490] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T12:59:24.491] [INFO] BST Farmer - pid:      1
+[2021-06-09T12:59:24.491] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T12:59:24.491] [INFO] BST Farmer - userRewardDebt:   9801.999998525003036825
+[2021-06-09T12:59:24.491] [INFO] BST Farmer - poolAccTokenPerShare:     0.261799542417
+[2021-06-09T12:59:24.493] [INFO] BST Farmer - pending:  103.999999968090817656
+[2021-06-09T12:59:24.493] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:24.493] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:24.495] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:59:24.496] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T12:59:24.496] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T12:59:24.496] [INFO] BST Farmer - LastRewardBlock:  9572450
+[2021-06-09T12:59:24.496] [INFO] BST Farmer - Block Number:     9572490
+[2021-06-09T12:59:24.496] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:59:24.496] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:28.398] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:28.400] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:59:28.400] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:59:28.400] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:59:28.400] [INFO] BST Farmer - LastRewardBlock:  9572460
+[2021-06-09T12:59:28.400] [INFO] BST Farmer - Block Number:     9572492
+[2021-06-09T12:59:28.401] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T12:59:28.402] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:28.411] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:28.411] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T12:59:28.412] [INFO] BST Farmer - quantity: 35.308352615877513682
+[2021-06-09T12:59:28.412] [INFO] BST Farmer - totalQuantity:    35.308352615877513682
+[2021-06-09T12:59:28.412] [INFO] BST Farmer - userRward:        130.0
+[2021-06-09T12:59:28.412] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:52.376] [INFO] BST Farmer - =====================
+[2021-06-09T12:59:52.377] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T12:59:52.377] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:59:52.377] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T12:59:52.377] [INFO] BST Farmer - LastRewardBlock:  9572492
+[2021-06-09T12:59:52.377] [INFO] BST Farmer - Block Number:     9572500
+[2021-06-09T12:59:52.377] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T12:59:52.377] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:12.081] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:12.081] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:01:12.082] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T13:01:12.082] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T13:01:12.082] [INFO] BST Farmer - LastRewardBlock:  9572486
+[2021-06-09T13:01:12.082] [INFO] BST Farmer - Block Number:     9572526
+[2021-06-09T13:01:12.082] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T13:01:12.083] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:12.095] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:12.096] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T13:01:12.096] [INFO] BST Farmer - pid:      0
+[2021-06-09T13:01:12.096] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T13:01:12.097] [INFO] BST Farmer - userRewardDebt:   2476.499999027808089207
+[2021-06-09T13:01:12.097] [INFO] BST Farmer - poolAccTokenPerShare:     0.052110595843
+[2021-06-09T13:01:12.097] [INFO] BST Farmer - pending:  25.999999990801614855
+[2021-06-09T13:01:12.098] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:24.540] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:24.540] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:01:24.540] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T13:01:24.541] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T13:01:24.541] [INFO] BST Farmer - LastRewardBlock:  9572490
+[2021-06-09T13:01:24.541] [INFO] BST Farmer - Block Number:     9572530
+[2021-06-09T13:01:24.541] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T13:01:24.541] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:24.542] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:24.543] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T13:01:24.543] [INFO] BST Farmer - pid:      1
+[2021-06-09T13:01:24.543] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T13:01:24.543] [INFO] BST Farmer - userRewardDebt:   9905.999998493093854481
+[2021-06-09T13:01:24.544] [INFO] BST Farmer - poolAccTokenPerShare:     0.264548094043
+[2021-06-09T13:01:24.544] [INFO] BST Farmer - pending:  103.999999968090817656
+[2021-06-09T13:01:24.544] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:28.412] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:28.412] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:01:28.413] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:01:28.413] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:01:28.413] [INFO] BST Farmer - LastRewardBlock:  9572500
+[2021-06-09T13:01:28.413] [INFO] BST Farmer - Block Number:     9572532
+[2021-06-09T13:01:28.415] [INFO] BST Farmer - Amount:   104.0
+[2021-06-09T13:01:28.416] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:29.199] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:29.201] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T13:01:29.201] [INFO] BST Farmer - quantity: 92.033161115133613732
+[2021-06-09T13:01:29.202] [INFO] BST Farmer - totalQuantity:    92.033161115133613732
+[2021-06-09T13:01:29.202] [INFO] BST Farmer - userRward:        130.0
+[2021-06-09T13:01:29.202] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:54.406] [INFO] BST Farmer - =====================
+[2021-06-09T13:01:54.407] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:01:54.407] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:01:54.407] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:01:54.407] [INFO] BST Farmer - LastRewardBlock:  9572532
+[2021-06-09T13:01:54.407] [INFO] BST Farmer - Block Number:     9572540
+[2021-06-09T13:01:54.407] [INFO] BST Farmer - Amount:   26.0
+[2021-06-09T13:01:54.408] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:12.949] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:12.950] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T13:03:12.950] [INFO] BST Farmer - pid:      0
+[2021-06-09T13:03:12.951] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T13:03:12.951] [INFO] BST Farmer - userRewardDebt:   2502.499999018609704062
+[2021-06-09T13:03:12.951] [INFO] BST Farmer - poolAccTokenPerShare:     0.05266553985
+[2021-06-09T13:03:12.951] [INFO] BST Farmer - pending:  26.649999956955651207
+[2021-06-09T13:03:12.952] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:12.952] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:12.953] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:03:12.953] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T13:03:12.953] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T13:03:12.953] [INFO] BST Farmer - LastRewardBlock:  9572526
+[2021-06-09T13:03:12.953] [INFO] BST Farmer - Block Number:     9572567
+[2021-06-09T13:03:12.953] [INFO] BST Farmer - Amount:   26.65
+[2021-06-09T13:03:12.953] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:24.934] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:24.935] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:03:24.935] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T13:03:24.935] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T13:03:24.935] [INFO] BST Farmer - LastRewardBlock:  9572530
+[2021-06-09T13:03:24.935] [INFO] BST Farmer - Block Number:     9572571
+[2021-06-09T13:03:24.936] [INFO] BST Farmer - Amount:   106.6
+[2021-06-09T13:03:24.936] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:25.694] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:25.695] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T13:03:25.695] [INFO] BST Farmer - pid:      1
+[2021-06-09T13:03:25.695] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T13:03:25.696] [INFO] BST Farmer - userRewardDebt:   10009.999998461184672137
+[2021-06-09T13:03:25.696] [INFO] BST Farmer - poolAccTokenPerShare:     0.26736535946
+[2021-06-09T13:03:25.696] [INFO] BST Farmer - pending:  106.599999980536426751
+[2021-06-09T13:03:25.697] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:33.569] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:33.570] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:03:33.570] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:03:33.571] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:03:33.571] [INFO] BST Farmer - LastRewardBlock:  9572540
+[2021-06-09T13:03:33.571] [INFO] BST Farmer - Block Number:     9572573
+[2021-06-09T13:03:33.572] [INFO] BST Farmer - Amount:   107.25
+[2021-06-09T13:03:33.572] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:33.573] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:33.574] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T13:03:33.574] [INFO] BST Farmer - quantity: 161.834751816877675586
+[2021-06-09T13:03:33.575] [INFO] BST Farmer - totalQuantity:    161.834751816877675586
+[2021-06-09T13:03:33.575] [INFO] BST Farmer - userRward:        133.25
+[2021-06-09T13:03:33.575] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:52.503] [INFO] BST Farmer - =====================
+[2021-06-09T13:03:52.503] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:03:52.504] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:03:52.504] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:03:52.504] [INFO] BST Farmer - LastRewardBlock:  9572573
+[2021-06-09T13:03:52.504] [INFO] BST Farmer - Block Number:     9572580
+[2021-06-09T13:03:52.504] [INFO] BST Farmer - Amount:   22.75
+[2021-06-09T13:03:52.504] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:13.104] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:13.105] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T13:05:13.105] [INFO] BST Farmer - pid:      0
+[2021-06-09T13:05:13.105] [INFO] BST Farmer - userAmount:       48022.862884895793112616
+[2021-06-09T13:05:13.106] [INFO] BST Farmer - userRewardDebt:   2529.149998975565355269
+[2021-06-09T13:05:13.106] [INFO] BST Farmer - poolAccTokenPerShare:     0.053193413418
+[2021-06-09T13:05:13.106] [INFO] BST Farmer - pending:  25.349999976624715619
+[2021-06-09T13:05:13.106] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:13.749] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:13.750] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:05:13.750] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T13:05:13.751] [INFO] BST Farmer - Pool:     0x7B095E6eaA969F9f840Ccacb9DE89516DE2FC52E
+[2021-06-09T13:05:13.751] [INFO] BST Farmer - LastRewardBlock:  9572567
+[2021-06-09T13:05:13.751] [INFO] BST Farmer - Block Number:     9572606
+[2021-06-09T13:05:13.751] [INFO] BST Farmer - Amount:   25.35
+[2021-06-09T13:05:13.752] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:28.176] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:28.177] [INFO] BST Farmer - Liquiidty Farming CalculatePending:
+[2021-06-09T13:05:28.177] [INFO] BST Farmer - pid:      1
+[2021-06-09T13:05:28.177] [INFO] BST Farmer - userAmount:       37838.110437621016930555
+[2021-06-09T13:05:28.179] [INFO] BST Farmer - userRewardDebt:   10116.599998441721098888
+[2021-06-09T13:05:28.179] [INFO] BST Farmer - poolAccTokenPerShare:     0.270045197296
+[2021-06-09T13:05:28.179] [INFO] BST Farmer - pending:  101.399999993483318999
+[2021-06-09T13:05:28.179] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:32.940] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:32.941] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:05:32.941] [INFO] BST Farmer - Proxy:    0x8b7A8Aea7d27274907f490f4098C0266C5397e41
+[2021-06-09T13:05:32.941] [INFO] BST Farmer - Pool:     0xf7cF1C581a415e9C84F290E2742268Fd2C15eE37
+[2021-06-09T13:05:32.941] [INFO] BST Farmer - LastRewardBlock:  9572571
+[2021-06-09T13:05:32.941] [INFO] BST Farmer - Block Number:     9572610
+[2021-06-09T13:05:32.941] [INFO] BST Farmer - Amount:   101.4
+[2021-06-09T13:05:32.941] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:36.772] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:36.773] [INFO] BST Farmer - BSTMinter MintBST:
+[2021-06-09T13:05:36.773] [INFO] BST Farmer - Proxy:    0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:05:36.773] [INFO] BST Farmer - Pool:     0xA27aDdff68AE6F28ac110cF8516256F44ab5e7F2
+[2021-06-09T13:05:36.773] [INFO] BST Farmer - LastRewardBlock:  9572580
+[2021-06-09T13:05:36.773] [INFO] BST Farmer - Block Number:     9572613
+[2021-06-09T13:05:36.774] [INFO] BST Farmer - Amount:   107.25
+[2021-06-09T13:05:36.774] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:36.774] [INFO] BST Farmer - =====================
+[2021-06-09T13:05:36.774] [INFO] BST Farmer - Payment Farming Withdraw Rward:
+[2021-06-09T13:05:36.775] [INFO] BST Farmer - quantity: 109.240307142022444163
+[2021-06-09T13:05:36.775] [INFO] BST Farmer - totalQuantity:    109.240307142022444163
+[2021-06-09T13:05:36.776] [INFO] BST Farmer - userRward:        130.0
+[2021-06-09T13:05:36.776] [INFO] BST Farmer - =====================
+
