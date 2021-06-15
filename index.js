@@ -472,6 +472,7 @@ let intervalFarming = async (delayMs) => {
 			logger.info('Farming not start yet.');
 		}
 	};
+	task();
 	setInterval(task, delayMs);
 };
 
