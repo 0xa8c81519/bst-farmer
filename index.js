@@ -568,6 +568,13 @@ let farmingPool2 = async (ms) => {
 	}, ms);
 };
 
+let withdrawLiquidity = async () => {
+	// let pool = await paymentContract.pool();
+	// let pool2Contract = new ethers.Contract(pool, BStablePoolABIJson.abi, provider);
+	let userInfo = await liquidityContract.userInfo(2, wallets[0].address);
+	await liquidityContract.connect(wallets[0]).withdraw(2, userInfo.amount);
+};
+
 let funName = process.argv[3];
 switch (funName) {
 	case 'addLiquidity':
@@ -664,6 +671,10 @@ switch (funName) {
 	case 'listenPhaseChanged':
 		logger.info('BST Farmer - listenPhaseChanged');
 		listenPhaseChanged();
+		break;
+	case 'withdrawLiquidity':
+		logger.info('BST Farmer - withdrawLiquidity');
+		withdrawLiquidity();
 		break;
 	default: {
 		logger.info('BST Farmer - starting');
